@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SocketTest.iml" filepath="$PROJECT_DIR$/.idea/modules/SocketTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SocketTest_main.iml" filepath="$PROJECT_DIR$/.idea/modules/SocketTest_main.iml" group="SocketTest" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SocketTest_test.iml" filepath="$PROJECT_DIR$/.idea/modules/SocketTest_test.iml" group="SocketTest" />
+    </modules>
+  </component>
+</project>
