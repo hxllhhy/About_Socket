@@ -15,7 +15,6 @@ public class UDPProvider {
         //读取任意键盘信息后可以退出
         System.in.read();
         provider.exit();
-
     }
 
     private static class Provider extends Thread {
@@ -40,7 +39,6 @@ public class UDPProvider {
                     DatagramPacket receivePack = new DatagramPacket(buf, buf.length);
                     //接收
                     ds.receive(receivePack);
-                    System.out.println(System.currentTimeMillis());
 
                     //打印接收到的信息与发送者的信息
                     //发送者的IP地址
@@ -54,13 +52,13 @@ public class UDPProvider {
                     int responsePort = MessageCreator.parsePort(data);
                     if(responsePort != -1) {
                         //构建一份回送数据
-                        String responseData = "Receive data with len:" + dataLen;
+                        String responseData = MessageCreator.buildWithSn(sn);
                         byte[] responseDataBytes = responseData.getBytes();
                         //直接根据发送者构建一份回送信息
                         DatagramPacket responsePacket = new DatagramPacket(responseDataBytes,
                                 responseDataBytes.length,
                                 receivePack.getAddress(),
-                                receivePack.getPort());
+                                responsePort);
                         //发送
                         ds.send(responsePacket);
                     }
